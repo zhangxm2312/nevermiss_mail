@@ -42,8 +42,8 @@ mail_sent = {
 vpn = 1 # vpn=1则用qq发邮件，否则用gmail发
 smtp_server = 'smtp.qq.com' if vpn else 'smtp.gmail.com'
 port = 465 if vpn else 587
-user_email = '1328146757@qq.com' if vpn else 'zhangxm2312@gmail.com'
-password = 'jknqtunbixdejgbd'
+# user_email = QQ邮箱 if vpn else Gmail邮箱
+# password = '授权码
 
 # 登陆邮箱
 server = smtplib.SMTP_SSL(smtp_server, timeout=60)
@@ -57,7 +57,7 @@ for news in links_dic:
         continue
     # 邮件正文、发件人、标题
     msg = MIMEText(news, 'plain', 'utf-8')
-    msg['From'] = '安徽大学爬虫邮件系统'
+    msg['From'] = '“不错”订阅系统（安徽大学）'
     msg['Subject'] = links_dic[news]
     # 逐个发送给收件人列表
     for one in accepter:
